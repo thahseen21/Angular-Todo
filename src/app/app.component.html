@@ -1,21 +1,4 @@
-<h2>Todo App</h2>
+<!-- <h2>Todo App</h2> -->
+<button (click)="changeTitle()">change title</button>
 
-<input placeholder="todo..." [(ngModel)]="newTodo" />
-<button (click)="addTodo()">add</button>
-
-<br />
-
-<ng-container *ngIf="todos.length > 0; else showEmptyTodo">
-  <ol>
-    <!-- <ng-container> without adding any extra element to the DOM at runtime -->
-    <ng-container *ngFor="let todo of todos">
-      <li>
-        {{ todo.name }}
-        <button (click)="removeTodoById(todo.id)">remove</button>
-      </li>
-    </ng-container>
-  </ol>
-</ng-container>
-
-<!-- These template elements only work in the presence of structural directives, which help us to define a template that doesn’t render anything by itself, but conditionally renders them to the DOM. It helps us create dynamic templates that can be customized and configured. -->
-<ng-template #showEmptyTodo> No pending todos </ng-template>
+<app-todos></app-todos>
